@@ -13,27 +13,20 @@ const restaurants = [
 
 ]
 
-function getRandomRestaurant(array){
-    // get random index value
-    const randomIndex = Math.floor(Math.random() * array.length);
-
-    // get random restaurant
-    const restaurant = array[randomIndex];
-
-    return restaurant;
-}
-
-const randomRestaurant = getRandomRestaurant(restaurants);
-
-function printRandomRestaurant(restaurant){
-    const restaurantEl = document.querySelector("#random-restaurant");
-    const restaurantName = document.createElement("h2");
+function randomRestaurant(restaurant){
+    const restaurantName = document.querySelector("#random-restaurant_name");
     restaurantName.textContent = restaurant.name;
-    restaurantEl.append(restaurantName);
 }
 
+function getRandomRestaurant(array){
+    const randomIndex = Math.floor(Math.random() * array.length);
+    const restaurant = array[randomIndex];
+    randomRestaurant(restaurant);
+}
 
+const generatorBtn = document.querySelector("#random-restaurant-btn");
+generatorBtn.addEventListener("click", function (e){
+    getRandomRestaurant(restaurants);
+})
 
-
-
-console.log(printRandomRestaurant(randomRestaurant));
+//console.log(printRandomRestaurant(randomRestaurant));
