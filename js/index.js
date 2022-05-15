@@ -1,12 +1,11 @@
-import { url, fetchData } from "./sheets-data.js";
+/**
+ * 
+ * Generates Random Restaurant on Button click
+ * Prints Random Restaurant info to Dom
+ * 
+ */
 
-function getRandomRestaurant(data){
-    const values = data.values;
-    const details = values.slice(1);
-    const randomIndex = Math.floor(Math.random() * details.length);
-    const restaurant = details[randomIndex];
-    printRandomRestaurant(restaurant);
-}
+import { getRandomRestaurant } from "./generate-random-restaurant.js";
 
 function printRandomRestaurant(restaurant){
     const restaurantName = document.querySelector("#random-restaurant_name");
@@ -15,5 +14,5 @@ function printRandomRestaurant(restaurant){
 
 const generatorBtn = document.querySelector("#random-restaurant-btn");
 generatorBtn.addEventListener("click", function (e){
-    fetchData(url, getRandomRestaurant);
+   getRandomRestaurant(printRandomRestaurant);
 });
