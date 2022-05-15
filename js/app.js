@@ -1,9 +1,11 @@
 import { url, fetchData } from "./sheets-data.js";
 
-function randomRestaurantArray (data) { 
-   const values = data.values;
-   const details = values.slice(1);
-   getRandomRestaurant(details);
+function getRandomRestaurant(data){
+    const values = data.values;
+    const details = values.slice(1);
+    const randomIndex = Math.floor(Math.random() * details.length);
+    const restaurant = details[randomIndex];
+    printRandomRestaurant(restaurant);
 }
 
 function printRandomRestaurant(restaurant){
@@ -11,13 +13,7 @@ function printRandomRestaurant(restaurant){
     restaurantName.textContent = restaurant[0];
 }
 
-function getRandomRestaurant(obj){
-    const randomIndex = Math.floor(Math.random() * obj.length);
-    const restaurant = obj[randomIndex];
-    printRandomRestaurant(restaurant);
-}
-
 const generatorBtn = document.querySelector("#random-restaurant-btn");
 generatorBtn.addEventListener("click", function (e){
-    fetchData(url, randomRestaurantArray);
+    fetchData(url, getRandomRestaurant);
 });
