@@ -1,4 +1,3 @@
-//var restaurants;
 const apiKey = "AIzaSyC1zmiuAFdXP3wytulS0AOxRRjPl6smf_o";
 const spreadsheetId = "1qXVoKMWnMvdVq2fhikqdwgSbVo86VVfFoOfDuwg5bPs";
 const range = "Sheet1!A1:C";
@@ -15,7 +14,7 @@ function randomRestaurantArray (data) {
    getRandomRestaurant(details);
 }
 
-function randomRestaurant(restaurant){
+function printRandomRestaurant(restaurant){
     const restaurantName = document.querySelector("#random-restaurant_name");
     restaurantName.textContent = restaurant[0];
 }
@@ -23,7 +22,7 @@ function randomRestaurant(restaurant){
 function getRandomRestaurant(obj){
     const randomIndex = Math.floor(Math.random() * obj.length);
     const restaurant = obj[randomIndex];
-    randomRestaurant(restaurant);
+    printRandomRestaurant(restaurant);
 }
 
 const generatorBtn = document.querySelector("#random-restaurant-btn");
