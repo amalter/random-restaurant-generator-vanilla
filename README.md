@@ -5,7 +5,7 @@ This Random Restaurant Generator was built to help my spouse and I choose a rest
 ## Specs
 
 - Written in vanilla JavaScript, CSS and HTML.
-- Pulls data from Google Spreadsheet containing vegan-friendly restaurants in the Seattle Region.
+- Pulls data from Google Spreadsheet API containing vegan-friendly restaurants in the Seattle Region.
 
 ### Version 1
 

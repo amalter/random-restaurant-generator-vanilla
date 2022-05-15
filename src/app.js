@@ -1,17 +1,26 @@
-//test array with restaurant names
+var restaurants = []
+const apiKey = "AIzaSyC1zmiuAFdXP3wytulS0AOxRRjPl6smf_o";
+const spreadsheetId = "1qXVoKMWnMvdVq2fhikqdwgSbVo86VVfFoOfDuwg5bPs";
+const range = "Sheet1!A1:C";
+const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?alt=json&key=${apiKey}`;
+async function fetchData(url, callback) {
+   const data = await fetch(url)
+    .then(response => response.json())
+    .then(data => {return data;} )
 
-const restaurants = [
-    {
-        name: "Cycle Dogs"
-    },
-    {
-        name: "Wayward Vegan Cafe"
-    },
-    {
-        name: "El Borracho"
-    },
+    callback(data);
+}
 
-]
+function randomRestaurantArray (data) {
+    const values = data.values;
+    const labels = values[0];
+    const details = values.slice(1);
+    restaurants.push(labels, details);
+
+}
+fetchData(url, randomRestaurantArray);
+
+console.log("restaurants:", restaurants);
 
 function randomRestaurant(restaurant){
     const restaurantName = document.querySelector("#random-restaurant_name");
