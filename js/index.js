@@ -1,35 +1,35 @@
 /**
- * 
+ *
  * Generates Random Restaurant on Button click
  * Builds object with Restauran data
  * Prints Random Restaurant info to Dom
- * 
+ *
  */
 
 import { getRandomRestaurant } from "./generate-random-restaurant.js";
 
 //generate random restaurant on button click
 const generatorBtn = document.querySelector("#random-restaurant-btn");
-generatorBtn.addEventListener("click", function (e){
-   getRandomRestaurant(randomRestaurantObj);
+generatorBtn.addEventListener("click", function (e) {
+  getRandomRestaurant(randomRestaurantObj);
 });
 
 //build restaurant obj
-function randomRestaurantObj(restaurant){
-    let restaurantObj = {
-        name : restaurant[0],
-        menuUrl: restaurant[1],
-        neighborhood : restaurant[2],
-        address : restaurant[3],
-        cuisine : restaurant[4],
-        keywords : [restaurant[5]],
-        vegan : restaurant[6]
-    }
-    printRandomRestaurant(restaurantObj);
-  }
+function randomRestaurantObj(restaurant) {
+  let restaurantObj = {
+    name: restaurant[0],
+    menuUrl: restaurant[1],
+    neighborhood: restaurant[2],
+    address: restaurant[3],
+    cuisine: restaurant[4],
+    keywords: [restaurant[5]],
+    vegan: restaurant[6],
+  };
+  printRandomRestaurant(restaurantObj);
+}
 
 //print to dom
-function printRandomRestaurant(restaurant){
+function printRandomRestaurant(restaurant) {
   let element = document.querySelector("#random-restaurant");
   let content = `
     <h2>${restaurant.name}</h2>
@@ -44,3 +44,17 @@ function printRandomRestaurant(restaurant){
   `;
   element.innerHTML = content;
 }
+
+/**
+ * Footer copyright
+ */
+
+function printCopyright() {
+  let copyrightEl = document.querySelector(".main-footer #copyright");
+  let currentYear = new Date().getFullYear();
+  copyrightEl.innerHTML = `
+    &copy; ${currentYear} | <a href="https://www.amberalter.com/">Amber Alter</a>
+  `;
+}
+
+printCopyright();

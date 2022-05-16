@@ -28,6 +28,9 @@ a {
 ========================================================================== */
 .main-body {
   background: #c6f1f4;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 .main-title,
 .main-description {
@@ -39,9 +42,9 @@ a {
 .random-restaurant-section {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  width: 400px;
   margin: auto;
-  padding: 1em;
+  padding: 2em;
   background: #fff;
   border-radius: 30px;
 }
@@ -54,4 +57,12 @@ a {
   padding: 1em;
   max-width: 300px;
   margin: auto;
+}
+
+.main-footer {
+  display: flex;
+  padding: 1em;
+  text-align: center;
+  justify-content: space-between;
+  margin-top: auto;
 }
