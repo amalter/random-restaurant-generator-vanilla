@@ -1,6 +1,6 @@
 # Random Restaurant Generator
 
-This Random Restaurant Generator was built to help my spouse and I choose a restaurant when we are being indecisive.
+This [Random Restaurant Generator](https://www.amberalter.com/fun/random-restaurant-generator/) was built to help my spouse and I choose a restaurant when we are being indecisive.
 
 ## Specs
 
