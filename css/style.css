@@ -1,0 +1,57 @@
+/**
+
+App styles using vanilla CSS
+
+*/
+
+/* Font settings  
+========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Trirong", serif;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+a {
+  color: 003d3f;
+}
+
+/* Layout settings  
+========================================================================== */
+.main-body {
+  background: #c6f1f4;
+}
+.main-title,
+.main-description {
+  text-align: center;
+  padding: 0 1em;
+  color: #006d72;
+}
+
+.random-restaurant-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+  padding: 1em;
+  background: #fff;
+  border-radius: 30px;
+}
+
+#random-restaurant-btn {
+  background: #ffeded;
+  border: solid #c40000 3px;
+  color: #c40000;
+  border-radius: 5px;
+  padding: 1em;
+  max-width: 300px;
+  margin: auto;
+}
