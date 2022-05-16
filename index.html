@@ -14,25 +14,34 @@
     <script src="./js/index.js" defer type="module"></script>
     <title>Random Restaurant Generator</title>
   </head>
-  <body class="main-body">
-    <h1 class="main-title">Random Restaurant Generator</h1>
-    <p class="main-description">
-      Randomly generates vegan-friendly restaurants in the Seattle area.
-    </p>
+  <body class="main">
+    <header class="heading">
+      <h1 class="heading_title">Random Restaurant Generator</h1>
+      <p class="heading_description">
+        Randomly generates vegan-friendly restaurants in the Seattle area.
+      </p>
+    </header>
+
     <section class="random-restaurant-section" id="random-restaurant-generator">
       <div id="random-restaurant">
         <h2 id="random-restaurant_name">Restaurant Name...</h2>
       </div>
-      <button type="button" id="random-restaurant-btn">
+      <button type="button" id="random-restaurant_btn">
         Generate Random Restaurant
       </button>
     </section>
-    <footer class="main-footer">
+    <footer class="main_footer">
       <div id="copyright">&copy; Amber Alter</div>
       <div class="source">
-        <a href="https://github.com/amalter/random-restaurant-generator-vanilla"
-          >View Source on GitHub</a
+        <a
+          href="https://github.com/amalter/random-restaurant-generator-vanilla"
         >
+          View source code on GitHub
+          <img
+            class="git-hub-logo"
+            src="https://www.amberalter.com/wp-content/themes/sage-portfolio/dist/images/github_09c159a1.png"
+            alt="githublogo"
+        /></a>
       </div>
     </footer>
   </body>
