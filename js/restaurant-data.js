@@ -6,23 +6,29 @@
  */
 
 import { credentials } from "./credentials.js";
-import { Restaurant } from "./restaurant-class.js";
 
 const url = `https://sheets.googleapis.com/v4/spreadsheets/${credentials.spreadsheetId}/values/${credentials.range}?alt=json&key=${credentials.apiKey}`;
 
-//get data
+/**
+ *  get data
+ * */
 async function fetchData(url) {
   const data = await fetch(url)
     .then((response) => response.json())
     .then((data) => data);
   return data;
 }
+/**
+ * build object
+ * @param {
+ * } callback
+ */
 
-//builds an object
 async function restaurantObj(callback) {
   let data = await fetchData(url);
   let restaurants = data.values.slice(1);
   let object = {};
+  //build object from fetchData
   restaurants.map((restaurant, i) => {
     object[i] = {
       name: restaurant[0],
@@ -34,18 +40,8 @@ async function restaurantObj(callback) {
       vegan: restaurant[6],
     };
   });
-
   //do something with object data
   callback(object);
 }
 
-function printData(object) {
-  console.log("object", object);
-}
-
-window.addEventListener("load", (event) => {
-  console.log("page is fully loaded");
-  restaurantObj(printData);
-});
-
-//export restaurantObj;
+export { restaurantObj };
