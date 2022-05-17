@@ -11,19 +11,20 @@ import { Restaurant } from "./restaurant-class.js";
 const url = `https://sheets.googleapis.com/v4/spreadsheets/${credentials.spreadsheetId}/values/${credentials.range}?alt=json&key=${credentials.apiKey}`;
 
 //get data
-async function fetchData(url, callback) {
+async function fetchData(url) {
   const data = await fetch(url)
     .then((response) => response.json())
-    .then((data) => callback(data));
-  // return data;
+    .then((data) => data);
+  return data;
 }
 
-//get a random restaurant from data
-function buildRestaurantObj(data) {
+//builds an object
+async function restaurantObj(callback) {
+  let data = await fetchData(url);
   let restaurants = data.values.slice(1);
-  let restaurantObj = {};
-  restaurants.forEach((restaurant, i) => {
-    restaurantObj[i] = {
+  let object = {};
+  restaurants.map((restaurant, i) => {
+    object[i] = {
       name: restaurant[0],
       menuUrl: restaurant[1],
       neighborhood: restaurant[2],
@@ -34,12 +35,17 @@ function buildRestaurantObj(data) {
     };
   });
 
-  console.log("restaurantObj", restaurantObj);
+  //do something with object data
+  callback(object);
+}
+
+function printData(object) {
+  console.log("object", object);
 }
 
 window.addEventListener("load", (event) => {
   console.log("page is fully loaded");
-  fetchData(url, buildRestaurantObj);
+  restaurantObj(printData);
 });
 
 //export restaurantObj;
