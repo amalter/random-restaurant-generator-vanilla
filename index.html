@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/index.js" defer type="module"></script>
-    <script src="./js/restaurant-data.js" defer type="module"></script>
+    <script src="./js/filters.js" defer type="module"></script>
     <title>Random Restaurant Generator</title>
   </head>
   <body class="main">
@@ -22,7 +22,84 @@
         Randomly generates vegan-friendly restaurants in the Seattle area.
       </p>
     </header>
+    <section class="filter-form">
+      <form action="" method="get" id="restaurant-filter_form">
+        <fieldset class="filters-fieldset neighborhoods">
+          <legend>Select Neighborhood(s):</legend>
+          <div>
+            <input class="neighborhood" type="checkbox" id="all" name="All"
+                   checked>
+            <label for="All">All</label>
+          </div>
+      
+          <div>
+            <input class="neighborhood" type="checkbox" id="ballard" name="Ballard">
+            <label for="Ballard">Ballard</label>
+          </div>
+          <div>
+            <input class="neighborhood" type="checkbox" id="fremont" name="Fremont">
+            <label for="Fremont">Fremont</label>
+          </div>
+          <div>
+            <input class="neighborhood" type="checkbox" id="greenwood" name="Greenwood">
+            <label for="Greenwood">Greenwood</label>
+          </div>
+          <div>
+            <input class="neighborhood" type="checkbox" id="maple-leaf" name="Maple Leaf">
+            <label for="Maple Leaf">Maple Leaf</label>
+          </div>
+          <div>
+            <input class="neighborhood" type="checkbox" id="roosevelt" name="Roosevelt">
+            <label for="Roosevelt">Roosevelt</label>
+          </div>
+          <div>
+            <input class="neighborhood" type="checkbox" id="u-district" name="U-District">
+            <label for="U-District">U-District</label>
+          </div>
+      </fieldset><!--neighborhoods-->
+      <fieldset class="filters-fieldset cuisines">
+        <legend>Select Cuisines(s):</legend>
+        <div>
+          <input class="cuisine" type="checkbox" id="all" name="All"
+                 checked>
+          <label for="All">All</label>
+        </div>
+    
+        <div>
+          <input class="cuisine" type="checkbox" id="american-comfort" name="American Comfort">
+          <label for="American Comfort">American Comfort</label>
+        </div>
+        <div>
+          <input class="cuisine" type="checkbox" id="chinese" name="Chinese">
+          <label for="Chinese">Chinese</label>
+        </div>
+        <div>
+          <input class="cuisine" type="checkbox" id="indian" name="Indian">
+          <label for="Indian">Indian</label>
+        </div>
+        <div>
+          <input class="cuisine" type="checkbox" id="japanese" name="Japanese">
+          <label for="Japanese">Japanese</label>
+        </div>
+        <div>
+          <input class="cuisine" type="checkbox" id="mexican" name="Mexican">
+          <label for="Mexican">Mexican</label>
+        </div>
 
+        <div>
+          <input class="cuisine" type="checkbox" id="pizza" name="Pizza">
+          <label for="Pizza">Pizza</label>
+        </div>
+        <div>
+          <input class="cuisine" type="checkbox" id="thai" name="Thai">
+          <label for="Thai">Thai</label>
+        </div>
+    </fieldset><!--cuisines-->
+          
+          <input type="submit" value="Generate Random Restaurant">
+      </input>
+      </form>
+  </section>
     <section class="random-restaurant-section" id="random-restaurant-generator">
       <div id="random-restaurant">
         <h2 id="random-restaurant_name">Restaurant Name...</h2>
