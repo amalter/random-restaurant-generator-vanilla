@@ -54,22 +54,12 @@ selectAll.forEach((all) => {
 });
 
 function selectAllToggle(all, checkboxes) {
-  if (all.classList.contains("neighborhood")) {
-    checkboxes.forEach((checkbox) => {
-      if (checkbox.classList.contains("neighborhood")) {
-        console.log("all neighborhoods", checkbox.checked);
-        checkbox.checked = all.checked;
-      }
-    });
-    console.log("all neighborhoods!");
-  } else if (all.classList.contains("cuisine")) {
-    checkboxes.forEach((checkbox) => {
-      if (checkbox.classList.contains("cuisine")) {
-        console.log("all cuisines", all.checked);
-        checkbox.checked = all.checked;
-      }
-    });
-  }
+  let classList = all.classList;
+  checkboxes.forEach((checkbox) => {
+    if (checkbox.classList.contains(classList)) {
+      checkbox.checked = all.checked;
+    }
+  });
 }
 
 function clearSelectAll() {}
