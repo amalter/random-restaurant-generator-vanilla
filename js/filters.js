@@ -104,4 +104,34 @@ function clearSelectAll(checkbox, selectAll) {
   });
 }
 
-export { form, checkboxes, getFilters };
+/**
+ *
+ *  Prints alert to make a selection of no filters are selected.
+ *
+ */
+
+function requireSelection(filtersArray) {
+  let messageDiv = form.querySelector(".message-alert");
+  if (
+    filtersArray.cuisines.length === 0 &&
+    filtersArray.neighborhoods.length === 0
+  ) {
+    let message = `<span class="require-both"> Please make a neighborhood and cuisine selection </span>`;
+    messageDiv.innerHTML = message;
+    return false;
+  } else if (filtersArray.neighborhoods.length === 0) {
+    let message = `<span class="require-neighborhood"> Please make a neighborhood selection </span>`;
+    messageDiv.innerHTML = message;
+    return false;
+  } else if (filtersArray.cuisines.length === 0) {
+    let message = `<span class="require-cuisine"> Please make a cuisine selection </span>`;
+    messageDiv.innerHTML = message;
+    return false;
+  } else {
+    let message = "";
+    messageDiv.innerHTML = message;
+    return true;
+  }
+}
+
+export { form, checkboxes, getFilters, requireSelection };

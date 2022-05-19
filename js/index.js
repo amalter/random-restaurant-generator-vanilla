@@ -8,20 +8,22 @@
 
 import { restaurantObj } from "./restaurant-data.js";
 import { getRandomRestaurant } from "./generate-random-restaurant.js";
-import { form, checkboxes, getFilters } from "./filters.js";
+import { form, checkboxes, getFilters, requireSelection } from "./filters.js";
 
 /**-----------------------------------------------
  *
  * Event listner on form submit
  * Gets User selected filters
- * Generates a random restaurant based on user input
+ * If filters are selected, generates a random restaurant based on user input
  *
  */
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   getFilters(checkboxes);
   let filters = getFilters(checkboxes);
-  restaurantObj(getRandomRestaurant, filters);
+  if (requireSelection(filters)) {
+    restaurantObj(getRandomRestaurant, filters);
+  }
 });
 
 /**
