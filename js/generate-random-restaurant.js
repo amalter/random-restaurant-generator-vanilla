@@ -5,6 +5,11 @@
  *
  */
 
+const sampleFilters = {
+  cuisines: ["Japanese", "Mexican", "Chinese"],
+  neighborhoods: ["Ballard", "Fremont", "Wallingford"],
+};
+
 /**
  * get a random restaurant from data
  */
@@ -12,7 +17,21 @@ function getRandomRestaurant(data) {
   let length = Object.keys(data).length;
   const randomIndex = Math.floor(Math.random() * length);
   const restaurant = data[randomIndex];
-  printRandomRestaurant(restaurant);
+
+  let isMatched =
+    sampleFilters.neighborhoods.includes(restaurant.neighborhood) &&
+    sampleFilters.cuisines.includes(restaurant.cuisine);
+
+  if (isMatched) {
+    console.log("yes neigborhood & cuisines are matched");
+    printRandomRestaurant(restaurant);
+  } else {
+    console.log("try again");
+    getRandomRestaurant(data);
+  }
+
+  console.log("restaurant neighborhood", restaurant.neighborhood);
+  console.log("restaurant cuisine", restaurant.cuisine);
 }
 
 /**

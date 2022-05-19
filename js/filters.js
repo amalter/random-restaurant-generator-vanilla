@@ -9,7 +9,6 @@
  * Declare & assign form and input variables
  *
  * */
-
 const form = document.querySelector("#restaurant-filter_form");
 const checkboxes = document.querySelectorAll(
   ".filters-fieldset input[type='checkbox']:not(#all)"
@@ -18,26 +17,16 @@ const selectAll = document.querySelectorAll(
   ".filters-fieldset input[id='all']"
 );
 
-/**-----------------------------------------------
- *
- * Event listner on form submit
- *
- */
-form.addEventListener("submit", function (e) {
-  handleForm(e, checkboxes);
-});
-
 /**
- * Prevents default reload of page on submit click
+ *
  * builds an array of selected filters
  *
  * @param {*} e
  * @param {*} checkboxes
  */
-function handleForm(e, checkboxes) {
-  e.preventDefault();
+function getFilters(checkboxes) {
   let filtersArray = selectedFilters(checkboxes);
-  console.log("filtersArray", filtersArray);
+  console.log("filtersArray", filtersArray.neighborhoods[0]);
 }
 
 /**
@@ -114,3 +103,5 @@ function clearSelectAll(checkbox, selectAll) {
     }
   });
 }
+
+export { form, checkboxes, getFilters };

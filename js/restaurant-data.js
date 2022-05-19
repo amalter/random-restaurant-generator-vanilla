@@ -27,10 +27,10 @@ async function fetchData(url) {
 async function restaurantObj(callback) {
   let data = await fetchData(url);
   let restaurants = data.values.slice(1);
-  let object = {};
+  let restaurantObject = {};
   //build object from fetchData
   restaurants.map((restaurant, i) => {
-    object[i] = {
+    restaurantObject[i] = {
       name: restaurant[0],
       menuUrl: restaurant[1],
       neighborhood: restaurant[2],
@@ -41,7 +41,7 @@ async function restaurantObj(callback) {
     };
   });
   //do something with object data
-  callback(object);
+  callback(restaurantObject);
 }
 
 export { restaurantObj };

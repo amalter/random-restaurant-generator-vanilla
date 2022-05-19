@@ -8,6 +8,18 @@
 
 import { restaurantObj } from "./restaurant-data.js";
 import { getRandomRestaurant } from "./generate-random-restaurant.js";
+import { form, checkboxes, getFilters } from "./filters.js";
+
+/**-----------------------------------------------
+ *
+ * Event listner on form submit
+ *
+ */
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  getFilters(checkboxes);
+  console.log("inside index.js");
+});
 
 /**
  * Generate a random restaurant on button click
