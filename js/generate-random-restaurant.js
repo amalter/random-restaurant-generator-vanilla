@@ -5,33 +5,25 @@
  *
  */
 
-const sampleFilters = {
-  cuisines: ["Japanese", "Mexican", "Chinese"],
-  neighborhoods: ["Ballard", "Fremont", "Wallingford"],
-};
-
 /**
- * get a random restaurant from data
+ * Generates a random restaurant from spreadsheet data
+ * Checks if random restaurant matches user selected filters
+ * If matched, print restaurant
+ * If not matched, re-run function
  */
-function getRandomRestaurant(data) {
+function getRandomRestaurant(data, filters) {
   let length = Object.keys(data).length;
   const randomIndex = Math.floor(Math.random() * length);
   const restaurant = data[randomIndex];
-
+  //check if random restaurant matches user selected filters
   let isMatched =
-    sampleFilters.neighborhoods.includes(restaurant.neighborhood) &&
-    sampleFilters.cuisines.includes(restaurant.cuisine);
-
+    filters.neighborhoods.includes(restaurant.neighborhood) &&
+    filters.cuisines.includes(restaurant.cuisine);
   if (isMatched) {
-    console.log("yes neigborhood & cuisines are matched");
     printRandomRestaurant(restaurant);
   } else {
-    console.log("try again");
-    getRandomRestaurant(data);
+    getRandomRestaurant(data, filters);
   }
-
-  console.log("restaurant neighborhood", restaurant.neighborhood);
-  console.log("restaurant cuisine", restaurant.cuisine);
 }
 
 /**

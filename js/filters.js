@@ -26,7 +26,7 @@ const selectAll = document.querySelectorAll(
  */
 function getFilters(checkboxes) {
   let filtersArray = selectedFilters(checkboxes);
-  console.log("filtersArray", filtersArray.neighborhoods[0]);
+  return filtersArray;
 }
 
 /**

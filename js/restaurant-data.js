@@ -24,7 +24,7 @@ async function fetchData(url) {
  * } callback
  */
 
-async function restaurantObj(callback) {
+async function restaurantObj(callback, filters) {
   let data = await fetchData(url);
   let restaurants = data.values.slice(1);
   let restaurantObject = {};
@@ -41,7 +41,7 @@ async function restaurantObj(callback) {
     };
   });
   //do something with object data
-  callback(restaurantObject);
+  callback(restaurantObject, filters);
 }
 
 export { restaurantObj };

@@ -13,20 +13,15 @@ import { form, checkboxes, getFilters } from "./filters.js";
 /**-----------------------------------------------
  *
  * Event listner on form submit
+ * Gets User selected filters
+ * Generates a random restaurant based on user input
  *
  */
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   getFilters(checkboxes);
-  console.log("inside index.js");
-});
-
-/**
- * Generate a random restaurant on button click
- */
-const generatorBtn = document.querySelector("#random-restaurant_btn");
-generatorBtn.addEventListener("click", function (e) {
-  restaurantObj(getRandomRestaurant);
+  let filters = getFilters(checkboxes);
+  restaurantObj(getRandomRestaurant, filters);
 });
 
 /**
