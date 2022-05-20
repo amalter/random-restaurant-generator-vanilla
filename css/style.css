@@ -29,12 +29,9 @@ a {
 .main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   background: #c6f1f4;
 }
-/* .main > * {
-  padding: 2em 1em;
-} */
+
 .main_heading,
 .main_footer {
   padding: 2em 1em;
@@ -48,31 +45,71 @@ a {
 }
 .main_content {
   width: 100%;
-  max-width: 900px;
   margin: auto;
   background-color: #fff;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+@media only screen and (min-width: 900px) {
+  .main {
+    height: 100vh;
+  }
+  .main_content {
+    max-width: 900px;
+    flex-direction: column;
+    flex-direction: row;
+    align-items: stretch;
+  }
 }
 
 /*Form Styles*/
+
+.filter-form {
+  width: 100%;
+  padding: 2em;
+  background: #f2f4f4;
+}
+
 #restaurant-filter_form {
   display: flex;
   flex-direction: column;
+  max-width: 450px;
+  margin: auto;
 }
-.filter-form {
-  width: 50%;
-  padding: 2em;
-}
+
 .filters {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
 .filters_fieldset {
   border: none;
+  display: flex;
+  flex-wrap: wrap;
 }
+
+.filters_fieldset__field {
+  margin: 10px 10px 10px 0;
+}
+
 .filters_fieldset legend {
   text-decoration: underline;
+}
+
+@media only screen and (min-width: 900px) {
+  .filter-form {
+    width: 50%;
+  }
+  .filters {
+    flex-direction: row;
+  }
+
+  .filters_fieldset {
+    display: block;
+  }
 }
 
 .random-restaurant_btn {
@@ -98,10 +135,21 @@ a {
   display: flex;
   flex-direction: column;
   padding: 2em;
-  background: #ffeded;
-  width: 50%;
-  /* background: #fff;
-  border-radius: 30px; */
+  width: 100%;
+  max-width: 400px;
+}
+
+.random-restaurant {
+  padding: 0 1em;
+}
+
+@media only screen and (min-width: 900px) {
+  .random-restaurant-section {
+    width: 50%;
+  }
+  .random-restaurant {
+    padding: 0;
+  }
 }
 
 .random-restaurant_details {
