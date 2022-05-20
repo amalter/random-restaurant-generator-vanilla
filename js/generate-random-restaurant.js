@@ -10,7 +10,10 @@
  * Checks if random restaurant matches user selected filters
  * If matched, print restaurant
  * If not matched, re-run function
+ * Uses numberOfTries variable to prevent infinite loop
+ *
  */
+var numberOfTries = 0;
 function getRandomRestaurant(data, filters) {
   let length = Object.keys(data).length;
   const randomIndex = Math.floor(Math.random() * length);
@@ -19,10 +22,19 @@ function getRandomRestaurant(data, filters) {
   let isMatched =
     filters.neighborhoods.includes(restaurant.neighborhood) &&
     filters.cuisines.includes(restaurant.cuisine);
+
   if (isMatched) {
+    console.log("print random restaurant");
     printRandomRestaurant(restaurant);
+    numberOfTries = 0; //reset numberOfTries
   } else {
-    getRandomRestaurant(data, filters);
+    numberOfTries++; //increment numberOfTries
+    if (numberOfTries < 100) {
+      getRandomRestaurant(data, filters);
+    } else {
+      tryAgain();
+      numberOfTries = 0; //reset numberOfTries
+    }
   }
 }
 
@@ -66,6 +78,22 @@ function printRandomRestaurant(restaurant) {
           </ul>  
         `;
   element.innerHTML = content;
+}
+
+function tryAgain() {
+  let element = document.querySelector("#random-restaurant");
+
+  let restaurantContent = `
+          <h2>Please try again...</h2>
+          <p>There are no restaurants that match your criteria.</p>
+        `;
+  element.innerHTML = restaurantContent;
+
+  let alert = document.querySelector(".message-alert");
+  let alertContent = `
+  <span class="select-more">Select more neighborhoods and/or cuisines.</span>
+`;
+  alert.innerHTML = alertContent;
 }
 
 export { getRandomRestaurant };
