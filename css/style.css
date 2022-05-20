@@ -113,17 +113,16 @@ a {
 }
 
 .random-restaurant_btn {
-  background: #fff;
   border: solid #006d72 3px;
-  color: #006d72;
+  background: #006d72;
+  color: #fff;
   border-radius: 5px;
   padding: 1em;
   cursor: pointer;
   transition: background 0.3s;
 }
 .random-restaurant_btn:hover {
-  background: #006d72;
-  color: #fff;
+  background: #002d2d;
 }
 
 .message-alert {
@@ -139,15 +138,16 @@ a {
   max-width: 400px;
 }
 
-.random-restaurant {
+#random-restaurant {
   padding: 0 1em;
+  transition: opacity 0.3s ease-in-out;
 }
 
 @media only screen and (min-width: 900px) {
   .random-restaurant-section {
     width: 50%;
   }
-  .random-restaurant {
+  #random-restaurant {
     padding: 0;
   }
 }

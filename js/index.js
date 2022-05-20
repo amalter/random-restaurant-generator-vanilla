@@ -24,7 +24,20 @@ form.addEventListener("submit", function (e) {
   if (requireSelection(filters)) {
     restaurantObj(getRandomRestaurant, filters);
   }
+  displayTransition();
 });
+
+/**
+ * Restaurant Opacity animation
+ */
+
+function displayTransition() {
+  let restaurantDiv = document.querySelector("#random-restaurant");
+  restaurantDiv.style.opacity = "0";
+  setTimeout(function () {
+    restaurantDiv.style.opacity = "1";
+  }, 200);
+}
 
 /**
  * Print footer copyright
