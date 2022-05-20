@@ -124,6 +124,10 @@ a {
 .random-restaurant_btn:hover {
   background: #002d2d;
 }
+/* Checkbox styles */
+input[type="checkbox"] {
+  accent-color: #006d72;
+}
 
 .message-alert {
   color: #c40000;
@@ -162,6 +166,7 @@ a {
   width: 10px;
 }
 
+/* Footer styles */
 .main_footer {
   display: flex;
   margin-top: auto;
