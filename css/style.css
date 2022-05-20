@@ -27,6 +27,7 @@ a {
 /* Layout settings  
 ========================================================================== */
 .main {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background: #c6f1f4;
@@ -53,9 +54,6 @@ a {
   overflow: hidden;
 }
 @media only screen and (min-width: 900px) {
-  .main {
-    height: 100vh;
-  }
   .main_content {
     max-width: 900px;
     flex-direction: column;
