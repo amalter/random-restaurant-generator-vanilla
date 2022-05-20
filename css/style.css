@@ -27,27 +27,81 @@ a {
 /* Layout settings  
 ========================================================================== */
 .main {
-  background: #c6f1f4;
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background: #c6f1f4;
 }
-.heading_title,
-.heading_description {
+/* .main > * {
+  padding: 2em 1em;
+} */
+.main_heading,
+.main_footer {
+  padding: 2em 1em;
+}
+
+.main_heading-title,
+.main_heading-description {
   text-align: center;
   padding: 0 1em;
   color: #006d72;
 }
+.main_content {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  background-color: #fff;
+  display: flex;
+}
 
+/*Form Styles*/
+#restaurant-filter_form {
+  display: flex;
+  flex-direction: column;
+}
+.filter-form {
+  width: 50%;
+  padding: 2em;
+}
+.filters {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters_fieldset {
+  border: none;
+}
+.filters_fieldset legend {
+  text-decoration: underline;
+}
+
+.random-restaurant_btn {
+  background: #fff;
+  border: solid #006d72 3px;
+  color: #006d72;
+  border-radius: 5px;
+  padding: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.random-restaurant_btn:hover {
+  background: #006d72;
+  color: #fff;
+}
+
+.message-alert {
+  color: #c40000;
+  margin: 1em 0;
+}
+/*Random Restaurant section*/
 .random-restaurant-section {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 400px;
-  margin: auto;
   padding: 2em;
-  background: #fff;
-  border-radius: 30px;
+  background: #ffeded;
+  width: 50%;
+  /* background: #fff;
+  border-radius: 30px; */
 }
 
 .random-restaurant_details {
@@ -60,17 +114,9 @@ a {
   width: 10px;
 }
 
-#random-restaurant_btn {
-  background: #ffeded;
-  border: solid #c40000 3px;
-  color: #c40000;
-  border-radius: 5px;
-  padding: 1em;
-  cursor: pointer;
-}
-
 .main_footer {
   display: flex;
+  margin-top: auto;
   padding: 1em;
   text-align: center;
   justify-content: space-between;

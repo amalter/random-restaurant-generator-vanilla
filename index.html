@@ -15,97 +15,100 @@
     <title>Random Restaurant Generator</title>
   </head>
   <body class="main">
-    <header class="heading">
-      <h1 class="heading_title">Random Restaurant Generator</h1>
-      <p class="heading_description">
+    <header class="main_heading">
+      <h1 class="main_heading-title">Random Restaurant Generator</h1>
+      <p class="main_heading-description">
         Randomly generates vegan-friendly restaurants in the Seattle area.
       </p>
     </header>
-    <section class="filter-form">
-      <form action="" method="get" id="restaurant-filter_form">
-        <fieldset class="filters-fieldset neighborhoods">
-          <legend>Select Neighborhood(s):</legend>
-          <div>
-            <input class="neighborhood" type="checkbox" id="all" name="All" checked>
-            <label for="All">Select All</label>
-          </div>
-      
-          <div>
-            <input class="neighborhood" type="checkbox" id="ballard" name="Ballard" checked>
-            <label for="Ballard">Ballard</label>
-          </div>
-          <div>
-            <input class="neighborhood" type="checkbox" id="fremont" name="Fremont" checked>
-            <label for="Fremont">Fremont</label>
-          </div>
-          <div>
-            <input class="neighborhood" type="checkbox" id="greenwood" name="Greenwood" checked>
-            <label for="Greenwood">Greenwood</label>
-          </div>
-          <div>
-            <input class="neighborhood" type="checkbox" id="maple-leaf" name="Maple Leaf" checked>
-            <label for="Maple Leaf">Maple Leaf</label>
-          </div>
-          <div>
-            <input class="neighborhood" type="checkbox" id="roosevelt" name="Roosevelt" checked>
-            <label for="Roosevelt">Roosevelt</label>
-          </div>
-          <div>
-            <input class="neighborhood" type="checkbox" id="u-district" name="U-District" checked>
-            <label for="U-District">U-District</label>
-          </div>
-      </fieldset><!--neighborhoods-->
-      <fieldset class="filters-fieldset cuisines">
-        <legend>Select Cuisines(s):</legend>
-        <div>
-          <input class="cuisine" type="checkbox" id="all" name="All"
-                checked >
-          <label for="All">Select All</label>
+    <section class="main_content">
+      <section class="filter-form">
+        <form action="" method="get" id="restaurant-filter_form">
+          <div class="filters">
+            <fieldset class="filters_fieldset neighborhoods">
+              <legend>Neighborhood:</legend>
+              <div>
+                <input class="neighborhood" type="checkbox" id="all" name="All" checked>
+                <label for="All">Select All</label>
+              </div>
+              <div>
+                <input class="neighborhood" type="checkbox" id="ballard" name="Ballard" checked>
+                <label for="Ballard">Ballard</label>
+              </div>
+              <div>
+                <input class="neighborhood" type="checkbox" id="fremont" name="Fremont" checked>
+                <label for="Fremont">Fremont</label>
+              </div>
+              <div>
+                <input class="neighborhood" type="checkbox" id="greenwood" name="Greenwood" checked>
+                <label for="Greenwood">Greenwood</label>
+              </div>
+              <div>
+                <input class="neighborhood" type="checkbox" id="maple-leaf" name="Maple Leaf" checked>
+                <label for="Maple Leaf">Maple Leaf</label>
+              </div>
+              <div>
+                <input class="neighborhood" type="checkbox" id="roosevelt" name="Roosevelt" checked>
+                <label for="Roosevelt">Roosevelt</label>
+              </div>
+              <div>
+                <input class="neighborhood" type="checkbox" id="wallingford" name="Wallingford" checked>
+                <label for="Wallingford">Wallingford</label>
+              </div>
+              <div>
+                <input class="neighborhood" type="checkbox" id="u-district" name="U-District" checked>
+                <label for="U-District">U-District</label>
+              </div>
+            </fieldset><!--neighborhoods-->
+            <fieldset class="filters_fieldset cuisines">
+              <legend>Cuisine:</legend>
+              <div>
+                <input class="cuisine" type="checkbox" id="all" name="All"
+                      checked >
+                <label for="All">Select All</label>
+              </div>
+              <div>
+                <input class="cuisine" type="checkbox" id="american-comfort" name="American Comfort" checked>
+                <label for="American Comfort">American Comfort</label>
+              </div>
+              <div>
+                <input class="cuisine" type="checkbox" id="chinese" name="Chinese" checked>
+                <label for="Chinese">Chinese</label>
+              </div>
+              <div>
+                <input class="cuisine" type="checkbox" id="indian" name="Indian" checked>
+                <label for="Indian">Indian</label>
+              </div>
+              <div>
+                <input class="cuisine" type="checkbox" id="japanese" name="Japanese" checked>
+                <label for="Japanese">Japanese</label>
+              </div>
+              <div>
+                <input class="cuisine" type="checkbox" id="mexican" name="Mexican" checked>
+                <label for="Mexican">Mexican</label>
+              </div>
+              <div>
+                <input class="cuisine" type="checkbox" id="pizza" name="Pizza" checked>
+                <label for="Pizza">Pizza</label>
+              </div>
+              <div>
+                <input class="cuisine" type="checkbox" id="thai" name="Thai" checked>
+                <label for="Thai">Thai</label>
+              </div>
+          </fieldset><!--cuisines-->
         </div>
-    
-        <div>
-          <input class="cuisine" type="checkbox" id="american-comfort" name="American Comfort" checked>
-          <label for="American Comfort">American Comfort</label>
+          
+        <div class="message-alert"></div>
+        <input class="random-restaurant_btn" type="submit" value="Generate Random Restaurant"></input>
+        </form>
+      </section>
+      <section class="random-restaurant-section" id="random-restaurant-generator">
+        <div id="random-restaurant">
+          <h2 id="random-restaurant_name">Where to eat?</h2>
         </div>
-        <div>
-          <input class="cuisine" type="checkbox" id="chinese" name="Chinese" checked>
-          <label for="Chinese">Chinese</label>
-        </div>
-        <div>
-          <input class="cuisine" type="checkbox" id="indian" name="Indian" checked>
-          <label for="Indian">Indian</label>
-        </div>
-        <div>
-          <input class="cuisine" type="checkbox" id="japanese" name="Japanese" checked>
-          <label for="Japanese">Japanese</label>
-        </div>
-        <div>
-          <input class="cuisine" type="checkbox" id="mexican" name="Mexican" checked>
-          <label for="Mexican">Mexican</label>
-        </div>
+      </section>
+    </section><!--main content-->
 
-        <div>
-          <input class="cuisine" type="checkbox" id="pizza" name="Pizza" checked>
-          <label for="Pizza">Pizza</label>
-        </div>
-        <div>
-          <input class="cuisine" type="checkbox" id="thai" name="Thai" checked>
-          <label for="Thai">Thai</label>
-        </div>
-    </fieldset><!--cuisines-->
-          <div class="message-alert"></div>
-          <input type="submit" value="Generate Random Restaurant">
-      </input>
-      </form>
-  </section>
-    <section class="random-restaurant-section" id="random-restaurant-generator">
-      <div id="random-restaurant">
-        <h2 id="random-restaurant_name">Restaurant Name...</h2>
-      </div>
-      <button type="button" id="random-restaurant_btn">
-        Generate Random Restaurant
-      </button>
-    </section>
     <footer class="main_footer">
       <div id="copyright">&copy; Amber Alter</div>
       <div class="source">

@@ -11,10 +11,10 @@
  * */
 const form = document.querySelector("#restaurant-filter_form");
 const checkboxes = document.querySelectorAll(
-  ".filters-fieldset input[type='checkbox']:not(#all)"
+  ".filters_fieldset input[type='checkbox']:not(#all)"
 );
 const selectAll = document.querySelectorAll(
-  ".filters-fieldset input[id='all']"
+  ".filters_fieldset input[id='all']"
 );
 
 /**
