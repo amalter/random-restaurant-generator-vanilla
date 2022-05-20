@@ -22,7 +22,8 @@ import {
  * If filters are selected, generates a random restaurant based on user input
  *
  */
-formBtn.addEventListener("click", function (e) {
+
+function submitForm(e) {
   e.preventDefault();
   getFilters(checkboxes);
   let filters = getFilters(checkboxes);
@@ -30,6 +31,14 @@ formBtn.addEventListener("click", function (e) {
     restaurantObj(getRandomRestaurant, filters);
   }
   displayTransition();
+}
+//desktop
+formBtn.addEventListener("click", function (e) {
+  submitForm(e);
+});
+//mobile
+formBtn.addEventListener("touchstart", function (e) {
+  submitForm(e);
 });
 
 /**
