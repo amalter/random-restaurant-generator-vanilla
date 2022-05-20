@@ -7,10 +7,17 @@ This [Random Restaurant Generator](https://www.amberalter.com/fun/random-restaur
 - Written in vanilla JavaScript, CSS and HTML.
 - Pulls data from [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1qXVoKMWnMvdVq2fhikqdwgSbVo86VVfFoOfDuwg5bPs/edit?usp=sharing) containing vegan-friendly restaurants in the Seattle Region.
 
-### Current Version 1
+### Version 1
 
-V1 generates a random restaurant and link on button click.
+V1 generated a random restaurant and link on button click.
 
-### Future Version 2
+### (Current) Version 2
 
-The goal for V2 is to add filter options to help narrow down by location and cuisine keywords.
+V2 allows user to select filters for neighborhood and cuisine.
+
+### (Future) Version 3
+
+Foals for version three:
+
+- Convert to dropdown menu for checkboxes to reduce clutter
+- Build checkbox options dynamically from spreadsheet

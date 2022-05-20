@@ -24,7 +24,6 @@ function getRandomRestaurant(data, filters) {
     filters.cuisines.includes(restaurant.cuisine);
 
   if (isMatched) {
-    console.log("print random restaurant");
     printRandomRestaurant(restaurant);
     numberOfTries = 0; //reset numberOfTries
   } else {
