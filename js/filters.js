@@ -10,6 +10,7 @@
  *
  * */
 const form = document.querySelector("#restaurant-filter_form");
+const formBtn = form.querySelector(".random-restaurant_btn");
 const checkboxes = document.querySelectorAll(
   ".filters_fieldset input[type='checkbox']:not(#all)"
 );
@@ -134,4 +135,4 @@ function requireSelection(filtersArray) {
   }
 }
 
-export { form, checkboxes, getFilters, requireSelection };
+export { formBtn, checkboxes, getFilters, requireSelection };
